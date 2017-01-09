@@ -1,0 +1,2 @@
+module PublisherHousesHelper
+end
