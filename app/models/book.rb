@@ -6,7 +6,7 @@ class Book < ApplicationRecord
 
 	belongs_to :author, inverse_of: :books, dependent: :destroy, foreign_key: "author_id"
 
-	has_one :publisher_house, inverse_of: :book
+	belongs_to :publisher_house, foreign_key: "publisher_house_id"
 
 	# Validations
 

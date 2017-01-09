@@ -2,7 +2,7 @@ class PublisherHouse < ApplicationRecord
 
 	# Associations
 
-	belongs_to :book, inverse_of: :publisher_house, foreign_key: "book_id"	
+	
 
 	# Validations
 
