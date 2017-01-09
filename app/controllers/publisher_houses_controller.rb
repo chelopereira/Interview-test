@@ -5,7 +5,7 @@ class PublisherHousesController < ApplicationController
 
 	# GET
 	def index
-		@publisher_houses = PublisherHouse.all
+		@publisher_houses = PublisherHouse.all.order('name ASC')
 	end
 
 	# GET
