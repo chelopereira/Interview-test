@@ -1,11 +1,11 @@
 class PublisherHousesController < ApplicationController
 
 	#FALLBACKS
-	before_action :set_ph, only: [ :show, :edit, :update, :destroy ]
+	before_action :set_publisher_house, only: [ :show, :edit, :update, :destroy ]
 
 	# GET
 	def index
-		@phs = PublisherHouse.all
+		@publisher_houses = PublisherHouse.all
 	end
 
 	# GET
@@ -18,20 +18,20 @@ class PublisherHousesController < ApplicationController
 
 	# GET
 	def new
-		@ph = PublisherHouse.new
+		@publisher_house = PublisherHouse.new
 	end
 
 	# POST
 	def create
-		@ph = PublisherHouse.new(ph_params)
+		@publisher_house = PublisherHouse.new(ph_params)
 
 		respond_to do |format|
-			if @ph.save
-				format.html { redirect_to @ph, notice: 'Publisher House was successfully created.' }
-				format.json { render :show, status: :created, location: @ph }
+			if @publisher_house.save
+				format.html { redirect_to @publisher_house, notice: 'Publisher House was successfully created.' }
+				format.json { render :show, status: :created, location: @publisher_house }
 			else
 				format.htmal { render :new }
-				format.json { render json: @ph.errors, status: :unprocessable_entity }
+				format.json { render json: @publisher_house.errors, status: :unprocessable_entity }
 			end
 		end	
 	end
@@ -39,12 +39,12 @@ class PublisherHousesController < ApplicationController
 	# PATCH / PUT
 	def update
 		respond_to do |format|
-			if @ph.update(ph_params)
-				format.html { redirect_to @ph, notice: 'Publisher House was successfully updated.' }
-				format.json { render :show, status: :ok, location: @ph }
+			if @publisher_house.update(publisher_house_params)
+				format.html { redirect_to @publisher_house, notice: 'Publisher House was successfully updated.' }
+				format.json { render :show, status: :ok, location: @publisher_house }
 			else
 				format.html { render :edit }
-				format.json { render json: @ph.errors, status: :unprocessable_entity }
+				format.json { render json: @publisher_house.errors, status: :unprocessable_entity }
 			end
 		end	
 	end
@@ -54,7 +54,7 @@ class PublisherHousesController < ApplicationController
 	# DELETE
 	def destroy
 		respond_to do |format|
-			format.html { redirect_to @ph, notice: 'Publisher House was successfully destroyed.' }
+			format.html { redirect_to @publisher_house, notice: 'Publisher House was successfully destroyed.' }
 			format.json { head :no_content }
 		end
 	end
@@ -62,13 +62,13 @@ class PublisherHousesController < ApplicationController
 
 	private
 	# COMMON SETUPS -- 
-	def set_ph
-		@ph = PublisherHouse.find(params[:id])		
+	def set_publisher_house
+		@publisher_house = PublisherHouse.find(params[:id])		
 	end
 
 	# ALLOWED PARAMETERS
-	def ph_params
-		params.require(:ph).permit(:name)
+	def publisher_house_params
+		params.require(:publisher_house).permit(:name)
 	end
 
 end
