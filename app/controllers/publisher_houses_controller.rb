@@ -23,14 +23,14 @@ class PublisherHousesController < ApplicationController
 
 	# POST
 	def create
-		@publisher_house = PublisherHouse.new(ph_params)
+		@publisher_house = PublisherHouse.new(publisher_house_params)
 
 		respond_to do |format|
 			if @publisher_house.save
 				format.html { redirect_to @publisher_house, notice: 'Publisher House was successfully created.' }
 				format.json { render :show, status: :created, location: @publisher_house }
 			else
-				format.htmal { render :new }
+				format.html { render :new }
 				format.json { render json: @publisher_house.errors, status: :unprocessable_entity }
 			end
 		end	
