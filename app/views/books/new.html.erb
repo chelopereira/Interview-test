@@ -1,5 +1,9 @@
-<h1>New Book</h1>
+<div class="container bg-success text-center width-forms">
+	<h1 class="text-center text-primary">New Book</h1>
 
-<%= render 'form', book: @book %>
-
-<%= link_to 'Back', books_path %>
+	<%= render 'form', book: @book %>
+	
+	<button class="btn-back">
+	<%= link_to 'Back', books_path %>
+	</button>
+</div>

@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+	<p>
+	  <strong>Name:</strong>
+	  <%= @publisher_house.name %>
+	</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @publisher_house.name %>
-</p>
-
-<%= link_to 'Edit', edit_publisher_house_path(@publisher_house) %> |
-<%= link_to 'Back', publisher_houses_path %>
+	<%= link_to 'Edit', edit_publisher_house_path(@publisher_house) %> |
+	<%= link_to 'Back', publisher_houses_path %>
+</div>

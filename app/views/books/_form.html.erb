@@ -10,30 +10,33 @@
       </ul>
     </div>
   <% end %>
-  <div class="container">
+  
+  <form>
     <div class="field form-group">
       <%= f.label :cover %>
       <%= f.text_field :cover %>
     </div>
 
-    <div class="field form-control">
+    <div class="field form-group">
       <%= f.label :title %>
       <%= f.text_field :title %>
     </div>
 
-    <div class="field">
+    <div class="field form-group">
       <%= f.label :pages %>
       <%= f.number_field :pages %>
     </div>
 
-    <div class="field">
+    <div class="field form-group">
       <%= f.label :published_at %>
       <%= f.date_select :published_at %>
     </div>
 
-    <div class="actions btn btn-primary">
+    <div class="actions">
+      
       <%= f.submit %>
+      
     </div>  
-  </div>
+  </form>
   
 <% end %>

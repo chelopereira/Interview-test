@@ -13,7 +13,7 @@ class Book < ApplicationRecord
 	validates :title, length: { maximum: 150, too_long: "%{count} characters is the maximum allowed"}
 	validates :title, presence: true
 	validates :pages, numericality: { greater_than: 0, message: "NOT ALOWWED NEGATIVE NUMBERS!" }
-	validates :cover, presence: true, format: { with: /\A[www]+[A-Za-z0-9._%+-]+\.[A-Za-z]+\z/, message: "INCORRECT FORMAT! MUST BE AN URL" }
+	# validates :cover, presence: true, format: { with: /\A[www]+[A-Za-z0-9._%+-]+\.[A-Za-z]+\z/, message: "INCORRECT FORMAT! MUST BE AN URL" }
 
 
 end
